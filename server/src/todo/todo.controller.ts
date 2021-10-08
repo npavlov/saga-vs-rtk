@@ -11,20 +11,14 @@ import {
 import { ITodo } from './model';
 
 let todos: ITodo[] = [
-  'NestJS',
-  'GraphQL',
-  'Apollo',
-  'TypeScript',
-  'React',
-  'Redux',
+  'Gitlab CI',
+  'Docker',
+  'K8s',
+  'HelmChart',
+  'ArgoCD',
   'React Query',
-  'Angular',
-  'Vue',
-  'D3',
-  'Svelte',
-  'SolidJS',
-  'NextJS',
-  'AWS',
+  'Effector',
+  'Electron',
 ].map((text, index) => ({
   id: index + 1,
   text: `Learn ${text}`,
@@ -36,7 +30,7 @@ let todos: ITodo[] = [
 export class TodoController {
   @Get()
   async index() {
-    return todos.find(({ active }) => active);
+    return todos.filter(({ active }) => active);
   }
 
   @Get(':id')
