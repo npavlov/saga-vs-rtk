@@ -1,9 +1,11 @@
 import {ITodo} from "./model";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+const BASE_URL = "http://localhost:4000/";
+
 export const todoApi = createApi({
     reducerPath: "todoApi",
-    baseQuery: fetchBaseQuery({baseUrl: "http://localhost:4000/"}),
+    baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
     tagTypes: ["Todos"],
     endpoints: (builder) => ({
         getAll: builder.query<ITodo[], void>({
